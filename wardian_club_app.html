@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نادي الورديان الرياضي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c8b 0%, #ffffff 100%);
+            min-height: 100vh;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c8b, #2563eb);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .club-logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #1e3c8b;
+            font-weight: bold;
+            border: 3px solid white;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjQ4IiBzdHJva2U9IiMxZTNjOGIiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0id2hpdGUiLz4KPHN2ZyB4PSIxNSIgeT0iMTUiIHdpZHRoPSI3MCIgaGVpZ2h0PSI3MCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPgo8IS0tIEJ1aWxkaW5nIEJhc2UgLS0+CjxyZWN0IHg9IjIwIiB5PSI2NSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjMWUzYzhiIiBzdHJva2U9IiMxZTNjOGIiIHN0cm9rZS13aWR0aD0iMSIvPgo8IS0tIE1haW4gVG93ZXIgLS0+CjxyZWN0IHg9IjM1IiB5PSIyNSIgd2lkdGg9IjMwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjMWUzYzhiIiBzdHJva2U9IiMxZTNjOGIiIHN0cm9rZS13aWR0aD0iMSIvPgo8IS0tIFRvcCBUdXJyZXQgLS0+CjxjaXJjbGUgY3g9IjUwIiBjeT0iMjAiIHI9IjE1IiBmaWxsPSIjMWUzYzhiIiBzdHJva2U9IiMxZTNjOGIiIHN0cm9rZS13aWR0aD0iMSIvPgo8IS0tIFdpbmRvd3MgLS0+CjxyZWN0IHg9IjQwIiB5PSI0MCIgd2lkdGg9IjYiIGhlaWdodD0iOCIgZmlsbD0id2hpdGUiLz4KPHJlY3QgeD0iNTQiIHk9IjQwIiB3aWR0aD0iNiIgaGVpZ2h0PSI4IiBmaWxsPSJ3aGl0ZSIvPgo8cmVjdCB4PSI0MCIgeT0iNTUiIHdpZHRoPSI2IiBoZWlnaHQ9IjgiIGZpbGw9IndoaXRlIi8+CjxyZWN0IHg9IjU0IiB5PSI1NSIgd2lkdGg9IjYiIGhlaWdodD0iOCIgZmlsbD0id2hpdGUiLz4KPHN2ZyB4PSIzNSIgeT0iMTAiIHdpZHRoPSIzMCIgaGVpZ2h0PSIyMCI+Cjx0ZXh0IHg9IjE1IiB5PSI4IiBmb250LXNpemU9IjYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LXdlaWdodD0iYm9sZCI+QUxXQVJESUFOPC90ZXh0Pgo8dGV4dCB4PSIxNSIgeT0iMTYiIGZvbnQtc2l6ZT0iNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjE5MjY8L3RleHQ+Cjwvc3ZnPgo8L3N2Zz4KPC9zdmc+');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .club-info {
+            margin-bottom: 10px;
+        }
+
+        .club-info h1 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .club-info p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .login-section, .dashboard {
+            padding: 30px 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1e3c8b;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: #1e3c8b;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #374151;
+        }
+
+        .btn-secondary:hover {
+            background: #d1d5db;
+        }
+
+        .btn:disabled {
+            background: #d1d5db;
+            color: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .role-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .role-card {
+            padding: 15px 10px;
+            text-align: center;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .role-card.active {
+            border-color: #2563eb;
+            background: #eff6ff;
+        }
+
+        .role-card i {
+            font-size: 24px;
+            color: #1e3c8b;
+            margin-bottom: 5px;
+        }
+
+        .dashboard-menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .menu-item {
+            background: #f8fafc;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .menu-item:hover {
+            border-color: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .menu-item i {
+            font-size: 28px;
+            color: #1e3c8b;
+            margin-bottom: 10px;
+        }
+
+        .menu-item span {
+            display: block;
+            color: #374151;
+            font-weight: 600;
+        }
+
+        .player-categories {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .category {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-right: 4px solid #2563eb;
+        }
+
+        .category h3 {
+            color: #1e3c8b;
+            margin-bottom: 5px;
+        }
+
+        .prayer-reminder {
+            background: linear-gradient(135deg, #065f46, #059669);
+            color: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .prayer-time {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .profile-section {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic {
+            width: 80px;
+            height: 80px;
+            background: #e5e7eb;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #6b7280;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            background: #1e3c8b;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .schedule-item {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-right: 4px solid #059669;
+        }
+
+        .schedule-time {
+            color: #059669;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .nav-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #6b7280;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nav-item.active {
+            color: #1e3c8b;
+        }
+
+        .nav-item i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .nav-item span {
+            font-size: 12px;
+            display: block;
+        }
+
+        .otp-container {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .otp-input {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .otp-digit {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .otp-digit:focus {
+            border-color: #2563eb;
+            outline: none;
+        }
+
+        .timer {
+            color: #059669;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .success-message {
+            background: #dcfce7;
+            border: 2px solid #16a34a;
+            color: #15803d;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .error-message {
+            background: #fef2f2;
+            border: 2px solid #ef4444;
+            color: #dc2626;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="club-logo"></div>
+            <div class="club-info">
+                <h1>نادي الورديان الرياضي</h1>
+                <p>Al Wardian Sports Club</p>
+                <p>تأسس عام 1926 - ترخيص رقم (391)</p>
+            </div>
+        </div>
+
+        <!-- Login Section -->
+        <div id="loginSection" class="login-section">
+            <h2 style="text-align: center; color: #1e3c8b; margin-bottom: 20px;">تسجيل الدخول</h2>
+            
+            <div class="role-selector">
+                <div class="role-card" onclick="selectRole('coach')">
+                    <i class="fas fa-whistle"></i>
+                    <div>مدرب</div>
+                </div>
+                <div class="role-card" onclick="selectRole('player')">
+                    <i class="fas fa-running"></i>
+                    <div>لاعب</div>
+                </div>
+                <div class="role-card" onclick="selectRole('admin')">
+                    <i class="fas fa-user-tie"></i>
+                    <div>إداري</div>
+                </div>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>رقم الهاتف</label>
+                    <input type="tel" id="phone" required placeholder="05xxxxxxxx">
+                </div>
+                
+                <div class="form-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+                <button type="button" class="btn btn-secondary" onclick="showRegister()">إنشاء حساب جديد</button>
+            </form>
+        </div>
+
+        <!-- Phone Verification Section -->
+        <div id="verificationSection" class="login-section hidden">
+            <h2 style="text-align: center; color: #1e3c8b; margin-bottom: 20px;">التحقق من رقم الهاتف</h2>
+            
+            <div class="otp-container">
+                <i class="fas fa-mobile-alt" style="font-size: 30px; color: #0ea5e9; margin-bottom: 10px;"></i>
+                <p>تم إرسال رمز التحقق إلى رقم الهاتف:</p>
+                <strong id="verificationPhone"></strong>
+                
+                <div class="otp-input">
+                    <input type="text" class="otp-digit" maxlength="1" id="otp1">
+                    <input type="text" class="otp-digit" maxlength="1" id="otp2">
+                    <input type="text" class="otp-digit" maxlength="1" id="otp3">
+                    <input type="text" class="otp-digit" maxlength="1" id="otp4">
+                </div>
+                
+                <div class="timer" id="timer">إعادة الإرسال خلال: <span id="countdown">120</span> ثانية</div>
+            </div>
+
+            <button id="verifyBtn" class="btn btn-primary" onclick="verifyOTP()">تأكيد الرمز</button>
+            <button id="resendBtn" class="btn btn-secondary" onclick="resendOTP()" disabled>إعادة إرسال الرمز</button>
+            <button class="btn btn-secondary" onclick="backToLogin()">العودة</button>
+        </div>
+
+        <!-- Registration Section -->
+        <div id="registerSection" class="login-section hidden">
+            <h2 style="text-align: center; color: #1e3c8b; margin-bottom: 20px;">إنشاء حساب جديد</h2>
+            
+            <form id="registerForm">
+                <div class="form-group">
+                    <label>الاسم الكامل</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>رقم الهاتف</label>
+                    <input type="tel" id="regPhone" required placeholder="05xxxxxxxx">
+                </div>
+                
+                <div class="form-group">
+                    <label>كلمة المرور</label>
+                    <input type="password" id="regPassword" required>
+                </div>
+
+                <div class="form-group">
+                    <label>نوع الحساب</label>
+                    <select id="userRole" required>
+                        <option value="">اختر نوع الحساب</option>
+                        <option value="player">لاعب</option>
+                        <option value="coach">مدرب</option>
+                        <option value="admin">إداري</option>
+                    </select>
+                </div>
+
+                <div id="playerAgeGroup" class="form-group hidden">
+                    <label>الفئة العمرية</label>
+                    <select id="ageGroup">
+                        <option value="">اختر الفئة العمرية</option>
+                        <option value="youth">شباب (2006-2011)</option>
+                        <option value="juniors">براعم (2012-2020)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">التالي - التحقق من الهاتف</button>
+                <button type="button" class="btn btn-secondary" onclick="showLogin()">العودة لتسجيل الدخول</button>
+            </form>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard" class="dashboard hidden">
+            <!-- Prayer Reminder -->
+            <div class="prayer-reminder">
+                <div class="prayer-time" id="nextPrayer">الصلاة القادمة: المغرب</div>
+                <div id="prayerTime">6:30 مساءً</div>
+            </div>
+
+            <!-- Player Categories (for coaches/admins) -->
+            <div id="categoriesSection" class="player-categories hidden">
+                <h3 style="color: #1e3c8b; margin-bottom: 15px;">فئات اللاعبين</h3>
+                <div class="category">
+                    <h3>شباب (2006-2011)</h3>
+                    <p>15 لاعب مسجل</p>
+                </div>
+                <div class="category">
+                    <h3>براعم (2012-2020)</h3>
+                    <p>22 لاعب مسجل</p>
+                </div>
+            </div>
+
+            <!-- Profile Section -->
+            <div id="profileSection" class="profile-section">
+                <div class="profile-pic">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div style="text-align: center;">
+                    <h3 id="userName">اسم اللاعب</h3>
+                    <p id="userPosition">المركز: وسط الملعب</p>
+                    <p id="userLocation" style="color: #6b7280; font-size: 14px; margin-top: 5px;">
+                        <i class="fas fa-map-marker-alt"></i> جاري تحديد الموقع...
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Schedule -->
+            <div style="background: #f8fafc; border-radius: 12px; padding: 20px; margin-bottom: 100px;">
+                <h3 style="color: #1e3c8b; margin-bottom: 15px;">جدول التمارين</h3>
+                <div class="schedule-item">
+                    <div class="schedule-time">السبت - 4:00 مساءً</div>
+                    <div>تمرين بدني - ملعب النادي</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">الاثنين - 5:00 مساءً</div>
+                    <div>تمرين تكتيكي - ملعب النادي</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">الأربعاء - 4:30 مساءً</div>
+                    <div>مباراة ودية - نادي الزمالك</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div id="bottomNav" class="nav-bottom hidden">
+            <div class="nav-item active" onclick="showTab('home')">
+                <i class="fas fa-home"></i>
+                <span>الرئيسية</span>
+            </div>
+            <div class="nav-item" onclick="showTab('schedule')">
+                <i class="fas fa-calendar"></i>
+                <span>المواعيد</span>
+            </div>
+            <div class="nav-item" onclick="showTab('players')">
+                <i class="fas fa-users"></i>
+                <span>اللاعبون</span>
+            </div>
+            <div class="nav-item" onclick="showTab('profile')">
+                <i class="fas fa-user"></i>
+                <span>الملف الشخصي</span>
+            </div>
+            <div class="nav-item" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>خروج</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = null;
+        let selectedRole = null;
+        let pendingRegistration = null;
+        let generatedOTP = null;
+        let otpTimer = null;
+        let remainingTime = 120;
+
+        // Prayer times (example - would connect to prayer API)
+        const prayerTimes = {
+            'الفجر': '5:15',
+            'الظهر': '12:30',
+            'العصر': '3:45',
+            'المغرب': '6:30',
+            'العشاء': '8:00'
+        };
+
+        function selectRole(role) {
+            selectedRole = role;
+            document.querySelectorAll('.role-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            event.target.closest('.role-card').classList.add('active');
+        }
+
+        function showRegister() {
+            document.getElementById('loginSection').classList.add('hidden');
+            document.getElementById('registerSection').classList.remove('hidden');
+        }
+
+        function showLogin() {
+            document.getElementById('registerSection').classList.add('hidden');
+            document.getElementById('verificationSection').classList.add('hidden');
+            document.getElementById('loginSection').classList.remove('hidden');
+            clearOTPTimer();
+        }
+
+        function backToLogin() {
+            showLogin();
+            pendingRegistration = null;
+        }
+
+        function login(event) {
+            event.preventDefault();
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+
+            if (!selectedRole) {
+                showMessage('يرجى اختيار نوع الحساب', 'error');
+                return;
+            }
+
+            // Validate phone number format
+            if (!validatePhoneNumber(phone)) {
+                showMessage('يرجى إدخال رقم هاتف صحيح', 'error');
+                return;
+            }
+
+            // Request location permission for login
+            if (navigator.geolocation) {
+                showMessage('جاري تسجيل الدخول...', 'success');
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        // Simulate login with location
+                        currentUser = {
+                            phone: phone,
+                            role: selectedRole,
+                            name: 'محمد أحمد',
+                            location: {
+                                latitude: position.coords.latitude,
+                                longitude: position.coords.longitude
+                            }
+                        };
+
+                        showDashboard();
+                        showMessage('تم تسجيل الدخول بنجاح', 'success');
+                    },
+                    function(error) {
+                        // Continue login without location
+                        currentUser = {
+                            phone: phone,
+                            role: selectedRole,
+                            name: 'محمد أحمد',
+                            location: null
+                        };
+
+                        showDashboard();
+                        showMessage('تم تسجيل الدخول (بدون تحديد الموقع)', 'success');
+                    },
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 5000,
+                        maximumAge: 0
+                    }
+                );
+            } else {
+                // Simulate login without geolocation support
+                currentUser = {
+                    phone: phone,
+                    role: selectedRole,
+                    name: 'محمد أحمد',
+                    location: null
+                };
+
+                showDashboard();
+            }
+        }
+
+        function register(event) {
+            event.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const phone = document.getElementById('regPhone').value;
+            const password = document.getElementById('regPassword').value;
+            const role = document.getElementById('userRole').value;
+            const ageGroup = document.getElementById('ageGroup').value;
+
+            // Validate phone number format
+            if (!validatePhoneNumber(phone)) {
+                showMessage('يرجى إدخال رقم هاتف صحيح', 'error');
+                return;
+            }
+
+            // Request location permission
+            if (navigator.geolocation) {
+                showMessage('جاري طلب صلاحية الموقع...', 'success');
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        // Store registration data with location
+                        pendingRegistration = {
+                            fullName: fullName,
+                            phone: phone,
+                            password: password,
+                            role: role,
+                            ageGroup: ageGroup,
+                            location: {
+                                latitude: position.coords.latitude,
+                                longitude: position.coords.longitude
+                            }
+                        };
+
+                        // Send OTP
+                        sendOTP(phone);
+                    },
+                    function(error) {
+                        let errorMessage = 'فشل في الحصول على الموقع: ';
+                        switch(error.code) {
+                            case error.PERMISSION_DENIED:
+                                errorMessage += 'تم رفض الصلاحية';
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                errorMessage += 'الموقع غير متاح';
+                                break;
+                            case error.TIMEOUT:
+                                errorMessage += 'انتهت مهلة الطلب';
+                                break;
+                            default:
+                                errorMessage += 'خطأ غير معروف';
+                                break;
+                        }
+                        showMessage(errorMessage, 'error');
+                        
+                        // Continue without location
+                        pendingRegistration = {
+                            fullName: fullName,
+                            phone: phone,
+                            password: password,
+                            role: role,
+                            ageGroup: ageGroup,
+                            location: null
+                        };
+
+                        sendOTP(phone);
+                    },
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 10000,
+                        maximumAge: 0
+                    }
+                );
+            } else {
+                showMessage('المتصفح لا يدعم خدمة الموقع', 'error');
+                
+                // Continue without location
+                pendingRegistration = {
+                    fullName: fullName,
+                    phone: phone,
+                    password: password,
+                    role: role,
+                    ageGroup: ageGroup,
+                    location: null
+                };
+
+                sendOTP(phone);
+            }
+        }
+
+        function validatePhoneNumber(phone) {
+            // Saudi phone number validation (starts with 05 and 10 digits total)
+            const phoneRegex = /^05\d{8}$/;
+            return phoneRegex.test(phone);
+        }
+
+        function sendOTP(phoneNumber) {
+            // Generate 4-digit OTP
+            generatedOTP = Math.floor(1000 + Math.random() * 9000).toString();
+            
+            // Show verification section
+            document.getElementById('registerSection').classList.add('hidden');
+            document.getElementById('verificationSection').classList.remove('hidden');
+            document.getElementById('verificationPhone').textContent = phoneNumber;
+            
+            // Clear OTP inputs
+            clearOTPInputs();
+            
+            // Start countdown timer
+            startOTPTimer();
+            
+            // In real implementation, send SMS here
+            console.log('OTP sent:', generatedOTP); // For testing
+            showMessage(`تم إرسال رمز التحقق: ${generatedOTP}`, 'success');
+        }
+
+        function clearOTPInputs() {
+            document.getElementById('otp1').value = '';
+            document.getElementById('otp2').value = '';
+            document.getElementById('otp3').value = '';
+            document.getElementById('otp4').value = '';
+        }
+
+        function startOTPTimer() {
+            remainingTime = 120;
+            document.getElementById('resendBtn').disabled = true;
+            
+            otpTimer = setInterval(() => {
+                remainingTime--;
+                document.getElementById('countdown').textContent = remainingTime;
+                
+                if (remainingTime <= 0) {
+                    clearInterval(otpTimer);
+                    document.getElementById('timer').style.display = 'none';
+                    document.getElementById('resendBtn').disabled = false;
+                }
+            }, 1000);
+        }
+
+        function clearOTPTimer() {
+            if (otpTimer) {
+                clearInterval(otpTimer);
+                otpTimer = null;
+            }
+        }
+
+        function verifyOTP() {
+            const otp1 = document.getElementById('otp1').value;
+            const otp2 = document.getElementById('otp2').value;
+            const otp3 = document.getElementById('otp3').value;
+            const otp4 = document.getElementById('otp4').value;
+            
+            const enteredOTP = otp1 + otp2 + otp3 + otp4;
+            
+            if (enteredOTP.length !== 4) {
+                showMessage('يرجى إدخال الرمز كامل', 'error');
